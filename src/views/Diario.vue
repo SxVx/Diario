@@ -11,7 +11,50 @@
                         <nav class="d-flex justify-content-between py-2 mx-3">
                             <div>
                                 <span class="mx-2 font-weight-bold">Clima:</span>
-                                <span><i class="fas fa-cloud"></i></span>
+                                
+                                <span>
+                                    <i class="fas fa-cloud icon mx-1" 
+                                        :class="(clima=='cloud')?'icon-active':''"
+                                        @click="clima='cloud'"
+                                        ></i>
+                                </span>
+                                <span>
+                                    <i class="fas fa-cloud-showers-heavy icon mx-1" 
+                                    :class="(clima=='showers')?'icon-active':''"
+                                    @click="clima='showers'"
+                                    ></i>
+                                </span>
+                                <span>
+                                    <i class="fas fa-bolt icon mx-1" 
+                                    :class="(clima=='bolt')?'icon-active':''"
+                                    @click="clima='bolt'"
+                                    ></i>
+                                </span>
+                                <span>
+                                    <i class="fas fa-cloud-sun icon mx-1" 
+                                    :class="(clima=='cloud-sun')?'icon-active':''"
+                                    @click="clima='cloud-sun'"
+                                    ></i>
+                                </span>
+                                <span>
+                                    <i class="fas fa-wind icon mx-1" 
+                                    :class="(clima=='wind')?'icon-active':''"
+                                    @click="clima='wind'"
+                                    ></i>
+                                </span>
+                                <span>
+                                    <i class="fas fa-sun icon mx-1" 
+                                    :class="(clima=='sun')?'icon-active':''"
+                                    @click="clima='sun'"
+                                    ></i>
+                                </span>
+                                <span>
+                                    <i class="fas fa-snowflake icon mx-1" 
+                                    :class="(clima=='snowflake')?'icon-active':''"
+                                    @click="clima='snowflake'"
+                                    ></i>
+                                </span>
+
                             </div>
                             <div><span class="mx-2 font-weight-bold">00/00/0000</span></div>
                         </nav>
@@ -55,6 +98,7 @@ export default {
         return {
             editorContent : [],
             fecha : '',
+            clima : '',
         }
     },
     methods: {
@@ -150,3 +194,17 @@ export default {
 }
 </script>
 
+<style scoped>
+    .icon{
+        color : rgba(26,39,54,.32);
+    }
+    .icon:hover{
+        color : black;
+        font-size : 1.2em;
+        cursor:pointer;
+    }
+    .icon-active{
+        color : black;
+        font-size : 1.2em;
+    }
+</style>
